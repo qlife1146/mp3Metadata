@@ -1,24 +1,259 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mp3Metadata" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-r2-Orr">
+                                <rect key="frame" x="10" y="10" width="54" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="onBtnLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuE-LS-3BK"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsq-gg-wkr">
+                                <rect key="frame" x="0.0" y="60" width="414" height="920"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXf-cB-w0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="920"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음악 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP6-eM-YMJ">
+                                                <rect key="frame" x="8" y="8" width="93" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="7b0-uP-Scd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="음악 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaJ-uy-gxm">
+                                                <rect key="frame" x="8" y="46" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="vDp-jb-3t7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앨범 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUm-tB-IJa">
+                                                <rect key="frame" x="8" y="88" width="93" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fzC-fG-KU7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="앨범 제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HST-ah-k0I">
+                                                <rect key="frame" x="8" y="126" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="xSz-Nf-bmR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아티스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhR-4V-C5M">
+                                                <rect key="frame" x="8" y="168" width="87" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="4Ta-qI-hV2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아티스트" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0I0-lR-xEn">
+                                                <rect key="frame" x="8" y="206" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="snm-gd-Ylk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앨범 아티스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VzK-35-K78">
+                                                <rect key="frame" x="8" y="248" width="136" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="mVx-m2-gXh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작곡가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yz-zT-HOq">
+                                                <rect key="frame" x="8" y="328" width="65" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="fRV-tf-2r0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아티스트" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u1E-qy-4nn">
+                                                <rect key="frame" x="8" y="286" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="Ed5-A0-f66"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="작곡가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W9O-0s-qyR">
+                                                <rect key="frame" x="8" y="366" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="UOo-TK-bhH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="작사가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcN-RS-eYJ">
+                                                <rect key="frame" x="8" y="408" width="65" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="7Bh-rC-zeW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="작사가" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8R-Z2-Q3G">
+                                                <rect key="frame" x="8" y="446" width="398" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="8Pw-Pp-Gif"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HP-1I-LNm">
+                                                <rect key="frame" x="8" y="488" width="44" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="wS5-Ue-jxz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iH5-hv-rfC">
+                                                <rect key="frame" x="8" y="526" width="398" height="394"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="0HP-1I-LNm" firstAttribute="top" secondItem="B8R-Z2-Q3G" secondAttribute="bottom" constant="8" symbolic="YES" id="0r6-IN-7Fk"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="top" secondItem="YXf-cB-w0R" secondAttribute="top" constant="366" id="1uv-QW-9pu"/>
+                                            <constraint firstItem="eUm-tB-IJa" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="4B6-dp-Ynh"/>
+                                            <constraint firstItem="iH5-hv-rfC" firstAttribute="top" secondItem="0HP-1I-LNm" secondAttribute="bottom" constant="8" symbolic="YES" id="5c1-0O-AgM"/>
+                                            <constraint firstItem="SP6-eM-YMJ" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="7h4-DQ-0Gb"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="leading" secondItem="B8R-Z2-Q3G" secondAttribute="leading" id="8kD-Xd-aDm"/>
+                                            <constraint firstAttribute="trailing" secondItem="0I0-lR-xEn" secondAttribute="trailing" constant="8" id="BjQ-g9-zo9"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="leading" secondItem="0HP-1I-LNm" secondAttribute="leading" id="CQT-oh-CYg"/>
+                                            <constraint firstAttribute="trailing" secondItem="HST-ah-k0I" secondAttribute="trailing" constant="8" id="DR7-qK-gii"/>
+                                            <constraint firstItem="SP6-eM-YMJ" firstAttribute="top" secondItem="YXf-cB-w0R" secondAttribute="top" constant="8" id="DXM-iQ-dTK"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="leading" secondItem="iH5-hv-rfC" secondAttribute="leading" id="Eaj-xS-tUY"/>
+                                            <constraint firstItem="B8R-Z2-Q3G" firstAttribute="top" secondItem="NcN-RS-eYJ" secondAttribute="bottom" constant="8" symbolic="YES" id="HRA-Bc-cSs"/>
+                                            <constraint firstItem="u1E-qy-4nn" firstAttribute="top" secondItem="VzK-35-K78" secondAttribute="bottom" constant="8" symbolic="YES" id="Hn3-fF-hyY"/>
+                                            <constraint firstItem="0I0-lR-xEn" firstAttribute="top" secondItem="YXf-cB-w0R" secondAttribute="top" constant="206" id="Koy-CK-1WM"/>
+                                            <constraint firstItem="1Yz-zT-HOq" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="MWh-wA-zG2"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="N8I-Ik-iQI"/>
+                                            <constraint firstItem="0I0-lR-xEn" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="P9H-X1-6td"/>
+                                            <constraint firstAttribute="trailing" secondItem="W9O-0s-qyR" secondAttribute="trailing" constant="8" id="PpC-lu-NZ1"/>
+                                            <constraint firstItem="0HP-1I-LNm" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="Q2t-27-NSO"/>
+                                            <constraint firstItem="eUm-tB-IJa" firstAttribute="top" secondItem="YaJ-uy-gxm" secondAttribute="bottom" constant="8" symbolic="YES" id="QmM-Mc-ClL"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="leading" secondItem="NcN-RS-eYJ" secondAttribute="leading" id="RBE-NF-XA4"/>
+                                            <constraint firstItem="HST-ah-k0I" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="Sz7-01-DsI"/>
+                                            <constraint firstItem="NcN-RS-eYJ" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="cNS-Ey-g7m"/>
+                                            <constraint firstItem="u1E-qy-4nn" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="dFY-pd-i5k"/>
+                                            <constraint firstItem="VzK-35-K78" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="eDJ-Zc-kn3"/>
+                                            <constraint firstItem="eUm-tB-IJa" firstAttribute="top" secondItem="YXf-cB-w0R" secondAttribute="top" constant="88" id="fzb-X4-rJj"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="trailing" secondItem="iH5-hv-rfC" secondAttribute="trailing" id="g5L-fj-cBB"/>
+                                            <constraint firstItem="iH5-hv-rfC" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="gPa-TT-bVV"/>
+                                            <constraint firstAttribute="trailing" secondItem="YaJ-uy-gxm" secondAttribute="trailing" constant="8" id="hN8-mg-bZP"/>
+                                            <constraint firstAttribute="trailing" secondItem="u1E-qy-4nn" secondAttribute="trailing" constant="8" id="iM3-dZ-Mfs"/>
+                                            <constraint firstItem="YaJ-uy-gxm" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="ibZ-Mb-vrg"/>
+                                            <constraint firstItem="0I0-lR-xEn" firstAttribute="top" secondItem="KhR-4V-C5M" secondAttribute="bottom" constant="8" symbolic="YES" id="kS1-6P-OK2"/>
+                                            <constraint firstItem="VzK-35-K78" firstAttribute="top" secondItem="0I0-lR-xEn" secondAttribute="bottom" constant="8" symbolic="YES" id="luL-nA-1ka"/>
+                                            <constraint firstItem="KhR-4V-C5M" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="mwR-Bp-tTH"/>
+                                            <constraint firstAttribute="trailing" secondItem="B8R-Z2-Q3G" secondAttribute="trailing" constant="8" id="n9K-TX-zYF"/>
+                                            <constraint firstAttribute="trailing" secondItem="iH5-hv-rfC" secondAttribute="trailing" constant="8" id="orl-r7-p8j"/>
+                                            <constraint firstAttribute="bottom" secondItem="iH5-hv-rfC" secondAttribute="bottom" id="prX-UE-poC"/>
+                                            <constraint firstItem="NcN-RS-eYJ" firstAttribute="top" secondItem="W9O-0s-qyR" secondAttribute="bottom" constant="8" symbolic="YES" id="tfV-Zp-ZiU"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="top" secondItem="1Yz-zT-HOq" secondAttribute="bottom" constant="8" symbolic="YES" id="uO4-nl-pAg"/>
+                                            <constraint firstItem="W9O-0s-qyR" firstAttribute="trailing" secondItem="B8R-Z2-Q3G" secondAttribute="trailing" id="vYR-vt-PPu"/>
+                                            <constraint firstItem="B8R-Z2-Q3G" firstAttribute="leading" secondItem="YXf-cB-w0R" secondAttribute="leading" constant="8" id="wfA-AS-dks"/>
+                                            <constraint firstItem="HST-ah-k0I" firstAttribute="top" secondItem="eUm-tB-IJa" secondAttribute="bottom" constant="8" symbolic="YES" id="zm0-KZ-oUq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="YXf-cB-w0R" secondAttribute="bottom" constant="296" id="04D-uk-rHN"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="height" secondItem="hsq-gg-wkr" secondAttribute="height" id="CAr-Ij-fPB"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="bottom" secondItem="m1c-4L-tmK" secondAttribute="bottom" id="Y8G-ou-63e"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="top" secondItem="hsq-gg-wkr" secondAttribute="top" id="bC3-31-7lb"/>
+                                    <constraint firstAttribute="trailing" secondItem="YXf-cB-w0R" secondAttribute="trailing" id="bj5-au-eg1"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="width" secondItem="hsq-gg-wkr" secondAttribute="width" id="cuu-GD-4Va"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="centerX" secondItem="hsq-gg-wkr" secondAttribute="centerX" id="khF-DD-FMc"/>
+                                    <constraint firstItem="YXf-cB-w0R" firstAttribute="leading" secondItem="hsq-gg-wkr" secondAttribute="leading" id="xcr-nk-rX7"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="oKz-7h-eyJ"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="m1c-4L-tmK"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXM-g1-udi">
+                                <rect key="frame" x="319" y="17" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hsq-gg-wkr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="5hv-91-UI7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hsq-gg-wkr" secondAttribute="bottom" constant="20" id="Nb9-Ai-eL1"/>
+                            <constraint firstItem="hsq-gg-wkr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UlV-qb-1d5"/>
+                            <constraint firstItem="cj6-r2-Orr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="aaW-Ia-ihY"/>
+                            <constraint firstItem="cj6-r2-Orr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="dti-32-AnS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cj6-r2-Orr" secondAttribute="trailing" symbolic="YES" id="ev0-Nx-rm5"/>
+                            <constraint firstItem="hsq-gg-wkr" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iGp-0P-bnp"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="414" height="1000"/>
+                    <connections>
+                        <outlet property="tfAlbumArtist" destination="u1E-qy-4nn" id="V8X-xb-ew7"/>
+                        <outlet property="tfAlbumTitle" destination="HST-ah-k0I" id="QGw-Xw-UE6"/>
+                        <outlet property="tfArtist" destination="0I0-lR-xEn" id="vLN-Wt-UnS"/>
+                        <outlet property="tfComposer" destination="W9O-0s-qyR" id="Mb5-Jv-kuJ"/>
+                        <outlet property="tfLyricist" destination="B8R-Z2-Q3G" id="J0e-a3-G1v"/>
+                        <outlet property="tfTitle" destination="YaJ-uy-gxm" id="gNJ-OR-qSf"/>
+                        <outlet property="tvLyrics" destination="iH5-hv-rfC" id="6b2-Ax-j98"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="56.521739130434788" y="-3.2608695652173916"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
